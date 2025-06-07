@@ -1,19 +1,17 @@
 
-public class Vacant {
-private State roomState;
-public void getState() {
-	return roomState;
-}
-public void timeToClean() {
-	System.out.println("Error: Room has already been cleaned.");
-	return;
-}
-public void checkIn() {
-	System.out.println("Checked in.");
-	return;
-}
-public void checkOut() {
-	System.out.println("Error: Room is already vacant.");
-	return;
-}
+public class Vacant implements RoomState {
+
+	public String checkStatus() {
+		return "Vacant";
+	}
+	public void cleanRoom(Room room) {
+		System.out.println("Error: Room has already been cleaned.");
+	}
+	public void checkIn(Room room) {
+		System.out.println("Checked in.");
+		room.setState(new OccupiedState());
+	}
+	public void checkOut(Room room) {
+		System.out.println("Error: Room is already vacant.");
+	}
 }
