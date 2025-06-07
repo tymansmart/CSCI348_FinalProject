@@ -1,0 +1,19 @@
+
+public class Vacant {
+private State roomState;
+public void getState() {
+	return roomState;
+}
+public void timeToClean() {
+	System.out.println("Error: Room has already been cleaned.");
+	return;
+}
+public void checkIn() {
+	System.out.println("Checked in.");
+	return;
+}
+public void checkOut() {
+	System.out.println("Error: Room is already vacant.");
+	return;
+}
+}
