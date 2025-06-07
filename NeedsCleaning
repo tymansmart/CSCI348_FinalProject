@@ -1,22 +1,18 @@
-import java.util.*;
-public class NeedsCleaning {
-private State roomState;
-private String cleanTime;
-Scanner scan = new Scanner(System.in);
-public void getState() {
-	return roomState;
-}
-public void timeToClean() {
-	System.out.println("Enter scheduled time to clean: ");
-	cleanTime = scan.next();
+
+public class NeedsCleaning implements RoomState {
+
+	public String checkStatus() {
+		return "Needs Cleaning";
 	}
-public void checkIn() {
-	System.out.println("Error: Cannot check in, this room must be cleaned first.");
-	return;
-}
-public void checkOut() {
-	System.out.println("Error: Cannot check out, this room is unoccupied.");
-	return;
-}
+	public void cleanRoom(Room room) {
+		System.out.println("Room cleaned successfully.");
+		room.setState(new Vacant());
+	}
+	public void checkIn(Room room) {
+		System.out.println("Error: Cannot check in, this room must be cleaned first.");
+	}
+	public void checkOut(Room room) {
+		System.out.println("Error: Cannot check out, this room is unoccupied and needs cleaning.");
+	}
 
 }
