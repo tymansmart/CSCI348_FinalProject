@@ -9,7 +9,7 @@ public class Vacant implements RoomState {
 	}
 	public void checkIn(Room room) {
 		System.out.println("Checked in.");
-		room.setState(new OccupiedState());
+		room.setState(new Occupied());
 	}
 	public void checkOut(Room room) {
 		System.out.println("Error: Room is already vacant.");
