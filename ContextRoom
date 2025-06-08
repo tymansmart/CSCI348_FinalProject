@@ -1,0 +1,31 @@
+
+public class Room {
+	private Room state;
+		
+	public Room(Room baseState) {
+		this.state = baseState;
+	}
+	
+	public void changeState(Room newState) {
+		this.state = newState;
+		System.out.println("Room Status:" + newState.checkStatus());
+	}
+	
+	public Room getState() {
+		return state;
+	}
+	
+	//Behaviors
+	public void checkIn() {
+		state.checkIn();
+	}
+	
+	public void checkOut() {
+		state.checkOut();
+	}
+	
+	public void cleanRoom() {
+		state.cleanRoom();
+	}
+	
+}
